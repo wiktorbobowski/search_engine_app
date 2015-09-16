@@ -1,0 +1,7 @@
+<% if trend.nil? || trend == 0 %>
+    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+<% elsif trend > 0 %>
+    <span class="glyphicon glyphicon-menu-up" aria-hidden="true">&uarr;</span>
+<% else %>
+    <span class="glyphicon glyphicon-menu-down" aria-hidden="true">&darr;</span>
+<% end %>

@@ -1,0 +1,10 @@
+<% if results.any? %>
+    <div class="list-group">
+      <% results.each do |result| %>
+          <%= link_to  result.link, {:target => "_blank", :class=>"list-group-item"} do %>
+              <div class="span6"><%= result.title %></div>
+              <div class="span3"><%= result.updated_at.to_formatted_s(:short)%></div>
+          <% end %>
+      <% end %>
+    </div>
+<% end %>

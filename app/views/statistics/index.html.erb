@@ -1,0 +1,26 @@
+<%- model_class = Result -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th><%= model_class.human_attribute_name(:title) %></th>
+    <th><%= model_class.human_attribute_name(:link) %></th>
+    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @results.each do |result| %>
+      <tr>
+        <td><%= result.id%></td>
+        <td><%= result.title %></td>
+        <td><%= result.link %></td>
+        <td>
+          <%= link_to  t('.show'), statistics_show_path(result), :class => 'btn btn-default btn-xs' %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<%= form_for @delayed_job_settings, :url=> :update_interval,  :html => { :class => "form-horizontal search" } do |f| %>
+
+    <div class="control-group">
+      <%= f.label :interval, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :interval, [15,30,45], :class => 'form-control' %>
+      </div>
+    </div>
+
+
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                searches_path, :class => 'btn btn-default' %>
+
+<% end %>
